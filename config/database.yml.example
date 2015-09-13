@@ -1,4 +1,4 @@
-default: &default
+default: &defaults
   adapter: postgresql
   database: "ilooklike_us_<%= Rails.env %>"
   encoding: unicode
