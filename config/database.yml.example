@@ -1,0 +1,21 @@
+default: &defaults
+  adapter: postgresql
+  database: "ilooklike_us_<%= Rails.env %>"
+  encoding: unicode
+  pool: 5
+
+production:
+  <<: *defaults
+  url: <%= ENV['DATABASE_URL'] %>
+
+development:
+  <<: *defaults
+  username: username
+  password: password
+  host:     localhost
+
+test: &test
+  <<: *defaults
+  username: username
+  password: password
+  host:     localhost
